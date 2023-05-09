@@ -28,7 +28,7 @@ public class CommandSwitcher implements CommandExecutor {
             } else {
                 if (sender instanceof Player) {
                     Player player = (Player) sender;
-                    player.sendMessage("§fAvailable commands:\n§b/switcher - §fShows this message\n§b/gamemode - §fSets your gamemode or someones gamemode to a mode of your choice\n§b/fly - §fToggles fly mode for yourself or a person you want\n§b/heal - §fHeals yourself or a person you want\n§b/tp - §fTeleport to a player\n§b/switcher reload - §fReloads the config");
+                    player.sendMessage("§fAvailable commands:\n§b/switcher - §fShows this message\n§b/gamemode - §fSets your gamemode or someones gamemode to a mode of your choice\n§b/fly - §fToggles fly mode for yourself or a person you want\n§b/heal - §fHeals yourself or a person you want\n§b/tp - §fTeleport to a player\n§b/switcher reload - §fReloads the config\n§b/setspawn - §fSets the spawn to current location\n§b/spawn - §fTeleport to spawn");
                 } else {
                     sender.sendMessage("§fAvailable commands:\n§b/switcher - §fShows this message\n§b/gamemode - §fSets your gamemode or someones gamemode to a mode of your choice\n§b/fly - §fToggles fly mode for yourself or a person you want\n§b/heal - §fHeals yourself or a person you want\n§b/tp - §fTeleport to a player\n§b/switcher reload - §fReloads the config");
 
