@@ -6,32 +6,31 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.configuration.file.FileConfiguration;
-
+import dev.akamethedev.switcher.Switcher;
 import static org.bukkit.Bukkit.getPlayer;
-
 public class CommandGamemode implements CommandExecutor {
-   private FileConfiguration config;
+
     @SuppressWarnings("unused")
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("gamemode")) {
             if (sender instanceof Player) {
                 Player player;
-
+                FileConfiguration config = Switcher.INSTANCE.getConfig();
                 if (args.length == 1) {
                     player = (Player) sender;
                     if (args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("c")) {
                         player.setGameMode(GameMode.CREATIVE);
-                        sender.sendMessage(config.getString("self-gamemode-message").replace("{mode}", "creative"));
+                        sender.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "creative"));
                     } else if (args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("s")) {
                         player.setGameMode(GameMode.SURVIVAL);
-                        sender.sendMessage(config.getString("self-gamemode-message").replace("{mode}", "survival"));
+                        sender.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "survival"));
                     } else if (args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("a")) {
                         player.setGameMode(GameMode.ADVENTURE);
-                        sender.sendMessage(config.getString("self-gamemode-message").replace("{mode}", "adventure"));
+                        sender.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "adventure"));
                     } else if (args[0].equalsIgnoreCase("spectator") || args[0].equalsIgnoreCase("spec")) {
                         player.setGameMode(GameMode.SPECTATOR);
-                        sender.sendMessage(config.getString("self-gamemode-message").replace("{mode}", "spectator"));
+                        sender.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "spectator"));
                     } else {
                         sender.sendMessage("§cThis is not a valid gamemode");
                     }
