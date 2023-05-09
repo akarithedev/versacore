@@ -5,8 +5,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
 
 public final class Switcher extends JavaPlugin {
-    private FileConfiguration config;
     public static Switcher INSTANCE;
+    private FileConfiguration config;
     @Override
     public void onEnable() {
         INSTANCE = this;

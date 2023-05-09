@@ -23,10 +23,12 @@ public class CommandFly implements CommandExecutor {
                         } else {
                             if (!player.getAllowFlight()) {
                                 player.setAllowFlight(true);
-                                sender.sendMessage("§fYou have enabled flying mode for " + player.getName());
+                                sender.sendMessage(config.get("others-fly-enabled-message").toString().replace("{player}", player.getName()));
+                                player.sendMessage(config.get("self-fly-enabled-message").toString());
                             } else {
                                 player.setAllowFlight(false);
-                                sender.sendMessage("§fYou have disabled flying mode for " + player.getName());
+                                sender.sendMessage(config.get("others-fly-disabled-message").toString().replace("{player}", player.getName()));
+                                player.sendMessage(config.get("self-fly-disabled-message").toString());
                             }
                         }
                     } else {

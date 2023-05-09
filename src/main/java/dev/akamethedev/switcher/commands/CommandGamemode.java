@@ -46,16 +46,24 @@ public class CommandGamemode implements CommandExecutor {
 
                     if (args[1].equalsIgnoreCase("creative") || args[1].equalsIgnoreCase("c")) {
                         player.setGameMode(GameMode.CREATIVE);
-                        sender.sendMessage("§fThe gamemode for " + player.getName() + " has been changed to creative");
+                        sender.sendMessage(config.get("others-gamemode-message").toString().replace("{player}", player.getName()).replace("{mode}", "creative"));
+                        player.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "creative"));
+
                     } else if (args[1].equalsIgnoreCase("survival") || args[1].equalsIgnoreCase("s")) {
                         player.setGameMode(GameMode.SURVIVAL);
-                        sender.sendMessage("§fThe gamemode for " + player.getName() + " has been changed to survival");
+                        sender.sendMessage(config.get("others-gamemode-message").toString().replace("{player}", player.getName()).replace("{mode}", "survival"));
+                        player.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "survival"));
+
                     } else if (args[1].equalsIgnoreCase("adventure") || args[1].equalsIgnoreCase("a")) {
                         player.setGameMode(GameMode.ADVENTURE);
-                        sender.sendMessage("§fThe gamemode for " + player.getName() + " has been changed to adventure");
+                        sender.sendMessage(config.get("others-gamemode-message").toString().replace("{player}", player.getName()).replace("{mode}", "adventure"));
+                        player.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "adventure"));
+
                     } else if (args[1].equalsIgnoreCase("spectator") || args[1].equalsIgnoreCase("spec")) {
                         player.setGameMode(GameMode.SPECTATOR);
-                        sender.sendMessage("§fThe gamemode for " + player.getName() + " has been changed to spectator");
+                        sender.sendMessage(config.get("others-gamemode-message").toString().replace("{player}", player.getName()).replace("{mode}", "spectator"));
+                        player.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "spectator"));
+
                     }
                     return false;
                 }
