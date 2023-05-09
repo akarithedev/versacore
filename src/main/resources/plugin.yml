@@ -16,6 +16,7 @@ commands:
     description: "Allows you to heal yourself or a player"
     permission: akm.heal
     permission-message: "§cI am sorry but you cannot use this command."
+    aliases: [feed]
   tp:
     description: "teleport to another person"
     permission: akm.teleport
@@ -23,3 +24,12 @@ commands:
     aliases: [teleport]
   switcher:
     description: "Shows all available commands"
+  setspawn:
+    description: "Sets the spawn for current world"
+    permission: akm.admin
+    permission-message: "§cI am sorry but you cannot use this command."
+    aliases: [sspawn]
+  spawn:
+    description: "Teleport to spawn"
+    permission: akm.spawn
+    permission-message: "§cI am sorry but you cannot use this command."

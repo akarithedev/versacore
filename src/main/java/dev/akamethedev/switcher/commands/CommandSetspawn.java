@@ -1,0 +1,42 @@
+package dev.akamethedev.switcher.commands;
+
+import dev.akamethedev.switcher.Switcher;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+
+import java.io.File;
+import java.io.IOException;
+
+public class CommandSetspawn implements CommandExecutor {
+    private FileConfiguration data;
+    File locations = new File(Switcher.INSTANCE.getDataFolder().getPath(), "locations.yml");
+
+    public void writeData(final String key, final Object value) {
+        data.set(key, value);
+        try {
+            data.save(locations);
+        } catch (final IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(command.getName().equalsIgnoreCase("setspawn")) {
+            if(sender instanceof Player) {
+                Player player = (Player) sender;
+                if(player.getWorld().getName().equals("world")) {
+                    writeData("locations.spawn", player.getLocation());
+                    player.sendMessage("§fThe spawn location has been set to your current location");
+                } else {
+                    player.sendMessage("§cYou can only set the spawn in overworld!");
+                }
+            } else {
+                sender.sendMessage("§cThis command can only be used in game.");
+            }
+        }
+        return true;
+    }
+}

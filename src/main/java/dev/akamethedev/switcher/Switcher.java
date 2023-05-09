@@ -3,6 +3,9 @@ package dev.akamethedev.switcher;
 import dev.akamethedev.switcher.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.File;
 
 public final class Switcher extends JavaPlugin {
     public static Switcher INSTANCE;
@@ -16,6 +19,8 @@ public final class Switcher extends JavaPlugin {
         this.getCommand("switcher").setExecutor(new CommandSwitcher());
         this.getCommand("heal").setExecutor(new CommandHeal());
         this.getCommand("tp").setExecutor(new CommandTp());
+        this.getCommand("setspawn").setExecutor(new CommandSetspawn());
+        this.getCommand("spawn").setExecutor(new CommandSpawn());
         getLogger().info("Commands successfully loaded");
 
         getLogger().info("Loading config...");
