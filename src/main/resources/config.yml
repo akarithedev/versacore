@@ -3,7 +3,7 @@
 
 self-gamemode-message: "§fGamemode has been changed to {mode}"
 others-gamemode-message: "§fThe gamemode for {player} has been changed to {mode}"
-self-fly-enabled-message: "§fYou have enabled flying mode"
-self-fly-disabled-message: "§fYou have disabled flying mode"
+self-fly-enabled-message: "§fFlying mode has been enabled"
+self-fly-disabled-message: "§fFlying mode has been disabled"
 others-fly-enabled-message: "§fYou have enabled flying mode for {player}"
 others-fly-disabled-message: "§fYou have disabled flying mode for {player}"
