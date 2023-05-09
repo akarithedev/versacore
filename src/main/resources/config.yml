@@ -1,0 +1,7 @@
+#Here is the first config of the plugin
+#config version 1.0
+
+self-gamemode-message: "§fGamemode has been changed to {mode}"
+
+self-fly-enabled-message: "§fYou have enabled flying mode"
+self-fly-disabled-message: "§fYou have disabled flying mode"

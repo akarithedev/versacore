@@ -1,0 +1,25 @@
+name: ${project.name}
+description: ${project.description}
+author: Akame
+version: ${project.version}
+main: dev.akamethedev.switcher.Switcher
+commands:
+  gamemode:
+    description: "A command that sets gamemode to whatever the player chooses"
+    permission: akm.gamemode
+    permission-message: "§cI am sorry but you cannot use this command."
+  fly:
+    description: "Allows user to toggle fly mode for themselves or for others"
+    permission: akm.fly
+    permission-message: "§cI am sorry but you cannot use this command."
+  heal:
+    description: "Allows you to heal yourself or a player"
+    permission: akm.heal
+    permission-message: "§cI am sorry but you cannot use this command."
+  tp:
+    description: "teleport to another person"
+    permission: akm.teleport
+    permission-message: "§cI am sorry but you cannot use this command."
+    aliases: [teleport]
+  switcher:
+    description: "Shows all available commands"
