@@ -5,14 +5,19 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
 
 public class CommandSetspawn implements CommandExecutor {
-    private FileConfiguration data;
-    File locations = new File(Switcher.INSTANCE.getDataFolder().getPath(), "locations.yml");
+    File locations;
+    private final FileConfiguration data;
+    public CommandSetspawn() {
+        locations = new File(Switcher.INSTANCE.getDataFolder().getPath(), "locations.yml");
+        data = YamlConfiguration.loadConfiguration(locations);
+    }
 
     public void writeData(final String key, final Object value) {
         data.set(key, value);
