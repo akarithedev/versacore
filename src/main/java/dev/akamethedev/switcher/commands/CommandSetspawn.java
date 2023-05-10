@@ -4,36 +4,18 @@ import dev.akamethedev.switcher.Switcher;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-
-import java.io.File;
-import java.io.IOException;
+import dev.akamethedev.switcher.handlers.dataHandler;
 
 public class CommandSetspawn implements CommandExecutor {
-    File locations;
-    private final FileConfiguration data;
-    public CommandSetspawn() {
-        locations = new File(Switcher.INSTANCE.getDataFolder().getPath(), "locations.yml");
-        data = YamlConfiguration.loadConfiguration(locations);
-    }
 
-    public void writeData(final String key, final Object value) {
-        data.set(key, value);
-        try {
-            data.save(locations);
-        } catch (final IOException ex) {
-            ex.printStackTrace();
-        }
-    }
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(command.getName().equalsIgnoreCase("setspawn")) {
             if(sender instanceof Player) {
                 Player player = (Player) sender;
                 if(player.getWorld().getName().equals("world")) {
-                    writeData("locations.spawn", player.getLocation());
+                    dataHandler.INSTANCE.writeData("locations.spawn", player.getLocation());
                     player.sendMessage("§fThe spawn location has been set to your current location");
                 } else {
                     player.sendMessage("§cYou can only set the spawn in overworld!");

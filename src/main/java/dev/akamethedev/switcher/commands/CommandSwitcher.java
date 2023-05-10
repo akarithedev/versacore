@@ -1,10 +1,10 @@
 package dev.akamethedev.switcher.commands;
 
-import dev.akamethedev.switcher.Switcher;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import dev.akamethedev.switcher.handlers.dataHandler;
 public class CommandSwitcher implements CommandExecutor {
     @SuppressWarnings("unused")
     @Override
@@ -17,12 +17,14 @@ public class CommandSwitcher implements CommandExecutor {
                         if(player.hasPermission("akm.reload")) {
                             player.sendMessage("§cI am sorry but you cannot use this command");
                         } else {
-                            Switcher.INSTANCE.updateConfig();
-                            player.sendMessage("[switcher] §fConfig successfully reloaded");
+                            dataHandler.INSTANCE.updateConfig();
+                            dataHandler.INSTANCE.updateData();
+                            player.sendMessage("[switcher] §fPlugin successfully reloaded");
                         }
                     } else {
-                        Switcher.INSTANCE.updateConfig();
-                        sender.sendMessage("[switcher] §fConfig successfully reloaded");
+                        dataHandler.INSTANCE.updateConfig();
+                        dataHandler.INSTANCE.updateData();
+                        sender.sendMessage("[switcher] §fPlugin successfully reloaded");
                     }
                 }
             } else {
