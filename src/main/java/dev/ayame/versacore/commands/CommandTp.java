@@ -1,4 +1,4 @@
-package dev.akamethedev.switcher.commands;
+package dev.ayame.versacore.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

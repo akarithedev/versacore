@@ -1,11 +1,11 @@
-package dev.akamethedev.switcher;
+package dev.ayame.versacore;
 
-import dev.akamethedev.switcher.commands.*;
+import dev.ayame.versacore.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
-import dev.akamethedev.switcher.handlers.dataHandler;
+import dev.ayame.versacore.handlers.dataHandler;
 
-public final class Switcher extends JavaPlugin {
-    public static Switcher INSTANCE;
+public final class VersaCore extends JavaPlugin {
+    public static VersaCore INSTANCE;
     @Override
     public void onEnable() {
         INSTANCE = this;
@@ -13,7 +13,7 @@ public final class Switcher extends JavaPlugin {
         getLogger().info("Loading commands..");
         this.getCommand("gamemode").setExecutor(new CommandGamemode());
         this.getCommand("fly").setExecutor(new CommandFly());
-        this.getCommand("switcher").setExecutor(new CommandSwitcher());
+        this.getCommand("versacore").setExecutor(new CommandVersaCore());
         this.getCommand("heal").setExecutor(new CommandHeal());
         this.getCommand("tp").setExecutor(new CommandTp());
         this.getCommand("setspawn").setExecutor(new CommandSetspawn());

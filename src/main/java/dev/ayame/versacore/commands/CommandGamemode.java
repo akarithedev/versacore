@@ -1,12 +1,13 @@
-package dev.akamethedev.switcher.commands;
+package dev.ayame.versacore.commands;
 
+import dev.ayame.versacore.VersaCore;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.configuration.file.FileConfiguration;
-import dev.akamethedev.switcher.Switcher;
+
 import static org.bukkit.Bukkit.getPlayer;
 public class CommandGamemode implements CommandExecutor {
 
@@ -16,7 +17,7 @@ public class CommandGamemode implements CommandExecutor {
         if (command.getName().equalsIgnoreCase("gamemode")) {
             if (sender instanceof Player) {
                 Player player;
-                FileConfiguration config = Switcher.INSTANCE.getConfig();
+                FileConfiguration config = VersaCore.INSTANCE.getConfig();
                 if (args.length == 1) {
                     player = (Player) sender;
                     if (args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("c")) {

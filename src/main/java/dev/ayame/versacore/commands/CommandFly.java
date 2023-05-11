@@ -1,11 +1,12 @@
-package dev.akamethedev.switcher.commands;
+package dev.ayame.versacore.commands;
 
+import dev.ayame.versacore.VersaCore;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import dev.akamethedev.switcher.Switcher;
+
 import static org.bukkit.Bukkit.getServer;
 
 public class CommandFly implements CommandExecutor {
@@ -15,7 +16,7 @@ public class CommandFly implements CommandExecutor {
     public boolean onCommand(CommandSender sender, @org.jetbrains.annotations.NotNull Command command, String label, String[] args) {
             if (command.getName().equalsIgnoreCase("fly")) {
                 if (sender instanceof Player) {
-                    FileConfiguration config = Switcher.INSTANCE.getConfig();
+                    FileConfiguration config = VersaCore.INSTANCE.getConfig();
                     if(args.length > 0) {
                         Player player = getServer().getPlayer(args[0]);
                         if (player == null) {
@@ -44,7 +45,7 @@ public class CommandFly implements CommandExecutor {
                 } else {
                     if(args.length > 0) {
                         Player player = getServer().getPlayer(args[0]);
-                        FileConfiguration config = Switcher.INSTANCE.getConfig();
+                        FileConfiguration config = VersaCore.INSTANCE.getConfig();
                         if (player == null) {
                             sender.sendMessage("§cThe player is not online");
                         } else {

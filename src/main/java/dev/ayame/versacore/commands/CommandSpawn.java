@@ -1,6 +1,6 @@
-package dev.akamethedev.switcher.commands;
+package dev.ayame.versacore.commands;
 
-import dev.akamethedev.switcher.handlers.dataHandler;
+import dev.ayame.versacore.handlers.dataHandler;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

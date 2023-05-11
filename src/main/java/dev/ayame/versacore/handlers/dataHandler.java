@@ -1,5 +1,5 @@
-package dev.akamethedev.switcher.handlers;
-import dev.akamethedev.switcher.Switcher;
+package dev.ayame.versacore.handlers;
+import dev.ayame.versacore.VersaCore;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -11,15 +11,15 @@ public class dataHandler {
     private FileConfiguration data, config;
     public dataHandler() {
         INSTANCE = this;
-        Switcher.INSTANCE.getConfig().options().copyDefaults(true);
-        Switcher.INSTANCE.saveDefaultConfig();
+        VersaCore.INSTANCE.getConfig().options().copyDefaults(true);
+        VersaCore.INSTANCE.saveDefaultConfig();
         updateConfig();
-        locations = new File(Switcher.INSTANCE.getDataFolder().getPath(), "locations.yml");
+        locations = new File(VersaCore.INSTANCE.getDataFolder().getPath(), "locations.yml");
 
         if (!locations.exists()) {
             try {
                 if (locations.createNewFile()) {
-                    Switcher.INSTANCE.getLogger().info("§aCreated a new file");
+                    VersaCore.INSTANCE.getLogger().info("§aCreated a new file");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -28,8 +28,8 @@ public class dataHandler {
         updateData();
     }
         public void updateConfig() {
-            Switcher.INSTANCE.reloadConfig();
-            config = Switcher.INSTANCE.getConfig();
+            VersaCore.INSTANCE.reloadConfig();
+            config = VersaCore.INSTANCE.getConfig();
         }
        public void updateData() {
            data = YamlConfiguration.loadConfiguration(locations);

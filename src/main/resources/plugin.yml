@@ -1,35 +1,35 @@
 name: ${project.name}
 description: ${project.description}
-author: Akame
+author: Ayame
 version: ${project.version}
-main: dev.akamethedev.switcher.Switcher
+main: dev.ayame.versacore.VersaCore
 commands:
   gamemode:
     description: "A command that sets gamemode to whatever the player chooses"
-    permission: akm.gamemode
+    permission: versacore.gamemode
     permission-message: "§cI am sorry but you cannot use this command."
   fly:
     description: "Allows user to toggle fly mode for themselves or for others"
-    permission: akm.fly
+    permission: versacore.fly
     permission-message: "§cI am sorry but you cannot use this command."
   heal:
     description: "Allows you to heal yourself or a player"
-    permission: akm.heal
+    permission: versacore.heal
     permission-message: "§cI am sorry but you cannot use this command."
     aliases: [feed]
   tp:
     description: "teleport to another person"
-    permission: akm.teleport
+    permission: versacore.teleport
     permission-message: "§cI am sorry but you cannot use this command."
     aliases: [teleport]
-  switcher:
+  versacore:
     description: "Shows all available commands"
   setspawn:
     description: "Sets the spawn for current world"
-    permission: akm.admin
+    permission: versacore.admin
     permission-message: "§cI am sorry but you cannot use this command."
     aliases: [sspawn]
   spawn:
     description: "Teleport to spawn"
-    permission: akm.spawn
+    permission: versacore.spawn
     permission-message: "§cI am sorry but you cannot use this command."

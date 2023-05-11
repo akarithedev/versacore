@@ -4,7 +4,7 @@
 # Log file
 *.log
 .idea
-switcher.iml
+versacore.iml
 pom.xml
 # BlueJ files
 *.ctxt
