@@ -19,9 +19,8 @@ public class CommandSpawn implements CommandExecutor {
                 } else {
                     Location location = (Location) dataHandler.INSTANCE.getData("locations.spawn");
                     final Object o = dataHandler.INSTANCE.getData("locations.spawn");
-                    System.out.println("x: " + o);
-                    if (o instanceof Location) System.out.println("y: true");
                     player.teleport(location);
+                    player.sendMessage("§fYou have been teleported to spawn");
                 }
             } else {
                 sender.sendMessage("§cThis command can only be used in game.");

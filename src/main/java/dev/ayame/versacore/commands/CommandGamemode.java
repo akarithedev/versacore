@@ -22,18 +22,18 @@ public class CommandGamemode implements CommandExecutor {
                     player = (Player) sender;
                     if (args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("c")) {
                         player.setGameMode(GameMode.CREATIVE);
-                        sender.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "creative"));
+                        player.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "creative"));
                     } else if (args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("s")) {
                         player.setGameMode(GameMode.SURVIVAL);
-                        sender.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "survival"));
+                        player.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "survival"));
                     } else if (args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("a")) {
                         player.setGameMode(GameMode.ADVENTURE);
-                        sender.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "adventure"));
+                        player.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "adventure"));
                     } else if (args[0].equalsIgnoreCase("spectator") || args[0].equalsIgnoreCase("spec")) {
                         player.setGameMode(GameMode.SPECTATOR);
-                        sender.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "spectator"));
+                        player.sendMessage(config.get("self-gamemode-message").toString().replace("{mode}", "spectator"));
                     } else {
-                        sender.sendMessage("§cThis is not a valid gamemode");
+                        player.sendMessage("§cThis is not a valid gamemode");
                     }
                     return false;
                 }

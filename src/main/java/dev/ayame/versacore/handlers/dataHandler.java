@@ -19,7 +19,7 @@ public class dataHandler {
         if (!locations.exists()) {
             try {
                 if (locations.createNewFile()) {
-                    VersaCore.INSTANCE.getLogger().info("§aCreated a new file");
+                    VersaCore.INSTANCE.getLogger().info("Created a new file");
                 }
             } catch (IOException e) {
                 e.printStackTrace();

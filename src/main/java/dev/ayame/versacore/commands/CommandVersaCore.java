@@ -15,7 +15,7 @@ public class CommandVersaCore implements CommandExecutor {
                 if(args[0].equals("reload")) {
                     if(sender instanceof Player) {
                         Player player = (Player) sender;
-                        if(player.hasPermission("versacore.reload")) {
+                        if(!player.hasPermission("versacore.reload")) {
                             player.sendMessage("§cI am sorry but you cannot use this command");
                         } else {
                             dataHandler.INSTANCE.updateConfig();
@@ -26,6 +26,13 @@ public class CommandVersaCore implements CommandExecutor {
                         dataHandler.INSTANCE.updateConfig();
                         dataHandler.INSTANCE.updateData();
                         sender.sendMessage("[versacore] §fPlugin successfully reloaded");
+                    }
+                } else if(args[0].equals("version")) {
+                    if(sender instanceof Player) {
+                        Player player = (Player) sender;
+                        player.sendMessage("§fYou are running version v1.0.1 of versacore");
+                    } else {
+                        sender.sendMessage("§fYou are running version v1.0.1 of versacore");
                     }
                 }
             } else {

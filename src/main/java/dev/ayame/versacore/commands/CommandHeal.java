@@ -16,7 +16,7 @@ public class CommandHeal implements CommandExecutor {
                 if(args.length == 0) {
                     player.setHealth(20);
                     player.setFoodLevel(20);
-                    sender.sendMessage("§fYou have healed yourself");
+                    player.sendMessage("§fYou have healed yourself");
                 } else if(args.length == 1) {
                     Player player2 = (Player) getPlayer(args[0]);
                     if(player2 == null) {
