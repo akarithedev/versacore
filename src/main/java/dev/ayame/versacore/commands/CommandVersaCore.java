@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import dev.ayame.versacore.VersaCore;
 
 public class CommandVersaCore implements CommandExecutor {
     @SuppressWarnings("unused")
@@ -30,9 +31,9 @@ public class CommandVersaCore implements CommandExecutor {
                 } else if(args[0].equals("version")) {
                     if(sender instanceof Player) {
                         Player player = (Player) sender;
-                        player.sendMessage("§fYou are running version v1.0.1 of versacore");
+                        player.sendMessage("§fYou are running version " + VersaCore.INSTANCE.getDescription().getVersion() + " of versacore");
                     } else {
-                        sender.sendMessage("§fYou are running version v1.0.1 of versacore");
+                        sender.sendMessage("§fYou are running version " + VersaCore.INSTANCE.getDescription().getVersion() + " of versacore");
                     }
                 }
             } else {
